@@ -5,7 +5,7 @@ import xlrd
 import pandas as pd
 
 # Load xls sheet with data
-filename = "C:/Users/katin/OneDrive - Danmarks Tekniske Universitet/6_semester/MachineLearning/autoMPG/auto-mpg-revised-ml.data.csv"
+filename = "auto-mpg-revised-ml.data.csv"
 data = pd.read_csv(filename, delimiter='\t')
 
 # Extract attribute names (1st row, column 4 to 12)
