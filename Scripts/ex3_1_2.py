@@ -1,7 +1,7 @@
 # exercise 3.1.2
 # (requires data structures from ex. 3.1.1)
 # Imports the numpy and xlrd package, then runs the ex3_1_1 code
-from ex3_1_1_new import *
+from Scripts.LoadData import *
 import matplotlib.pyplot as plt
 
 # Data attributes to be plotted

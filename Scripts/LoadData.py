@@ -4,21 +4,23 @@ import numpy as np
 import xlrd
 import pandas as pd
 
-# Load xls sheet with data
+# Load data into a pandas dataframe
 filename = "auto-mpg-revised-ml.data.csv"
 data = pd.read_csv(filename, delimiter='\t')
+df = pd.DataFrame(data)
 
-# Extract attribute names (1st row, column 4 to 12)
+
+# Extract attribute names
+# nly the fist 6 Attributes are taken into account
+# as the last three are model year, origin and car name
 attributeNames = data.columns[0:6].tolist()
 print(attributeNames)
 
 
-# creating a Dataframe object 
-df = pd.DataFrame(data)
-
-# Z-Score using pandas standerizse
-#for i in attributeNames:
+# Z-Score for standardizing te data
+# for i in attributeNames:
 #    df[i] = (df[i] - df[i].mean()) / df[i].std() 
+
 
 # Extract class names to python list,
 # then encode with integers (dict)
@@ -28,20 +30,11 @@ classDict = dict(zip(classNames, range(len(classNames))))
 
 # Extract vector y, convert to NumPy array
 y = np.asarray([classDict[value] for value in classLabels])
-print(y)
 
-# Preallocate memory, then extract excel data to matrix X
+# Extract the 6 first columns into a matrix
 X = df.iloc[0:393, 0:6].to_numpy()
-print(X)
-
-#for i, col_id in enumerate(range(0, 8)):
-    #X[:, i] = np.asarray(data)
-
-# Compute values of N, M and C.
-#N = len(y)
 
 N = X.shape[0]
 M = len(attributeNames)
 C = len(classNames)
 
-print("Ran Exercise 3.1.1")
