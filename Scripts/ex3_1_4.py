@@ -1,6 +1,6 @@
 # exercise 3.1.4
 # (requires data structures from ex. 3.1.1)
-from Scripts.LoadData import *
+from LoadData import *
 import matplotlib.pyplot as plt 
 from scipy.linalg import svd
 

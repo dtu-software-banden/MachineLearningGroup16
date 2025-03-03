@@ -1,7 +1,7 @@
 # exercise 3.1.3
 # (requires data structures from ex. 3.1.1)
 import matplotlib.pyplot as plt
-from Scripts.LoadData import *
+from LoadData import *
 from scipy.linalg import svd 
 
 # Subtract mean value from data
