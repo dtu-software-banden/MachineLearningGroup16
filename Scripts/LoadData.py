@@ -1,7 +1,5 @@
 # exercise 3.1.1
-import importlib_resources
 import numpy as np
-import xlrd
 import pandas as pd
 
 # Load data into a pandas dataframe
@@ -15,7 +13,15 @@ df = pd.DataFrame(data)
 # as the last three are model year, origin and car name
 attributeNames = data.columns[0:6].tolist()
 #attributeNames.append('origin')
-print(attributeNames)
+#print(attributeNames)
+
+
+# Define MPG-based masks
+low_mpg_mask = df["mpg"] < 18
+medium_mpg_mask = (df["mpg"] >= 18) & (df["mpg"] < 30)
+high_mpg_mask = df["mpg"] >= 30
+
+
 
 
 # Z-Score for standardizing te data
